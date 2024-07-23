@@ -27,4 +27,4 @@ $ docker compose up -d
 
 by [https://www.youtube.com/@GoLabTutoriais](https://www.youtube.com/@GoLabTutoriais)
 
-Font: [https://www.youtube.com/watch?v=3p4mpId_ZU8&t=1875s] (Como criar uma REST API completa do zero com GO | Golang tutorial - iniciante)
+Font: [https://www.youtube.com/watch?v=3p4mpId_ZU8&t=1875s](Como criar uma REST API completa do zero com GO | Golang tutorial - iniciante)

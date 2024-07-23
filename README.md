@@ -4,10 +4,25 @@ API em go para gerenciamento de produtos, utilizando Docker e Postgres rodando e
 
 ## Recursos
 
-- Model products
-- Controller products
-- Rota products
+- Repositories 
+- Usecases
+- Controllers
+  
+## Rotas
 
-## Usercases
-- Criando a camada usecase a gente já pode criar em seguida a cadama repository e a conexão com o banco de dados.
-- Dessa forma iremos interligar nosso controller que irá chamar o usecase q por sua vez irá chamar o repository.
+Lista produtos - http://localhost:8000/products [GET]
+Cadastra produto - http://localhost:8000/products [POST]
+Obtem um produto - http://localhost:8000/products/1 [GET]
+Atualiza produto - http://localhost:8000/products/1 [PUT]
+Exclui produto - http://localhost:8000/products/1 [DELETE]
+
+## Subir app
+
+Para subir a aplicação primeiro rode o comando para gerar a imagem "docker build -t go-api-vige ." e em seguida o comando "docker compose up -d" para subir o container com o app e o postgres.
+
+```
+$ docker build -t go-api-vige .
+$ docker compose up -d
+```
+
+by [https://www.youtube.com/watch?v=3p4mpId_ZU8&t=1875s](https://www.youtube.com/watch?v=3p4mpId_ZU8&t=1875s)

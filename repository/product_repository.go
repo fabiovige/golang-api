@@ -76,7 +76,8 @@ func (pr *ProductRepository) GetProductById(id_product int) (*model.Product, err
 	var product model.Product
 	err = query.QueryRow(id_product).Scan(
 		&product.ID,
-		&product.Name, &product.Price,
+		&product.Name,
+		&product.Price,
 	)
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -87,4 +88,38 @@ func (pr *ProductRepository) GetProductById(id_product int) (*model.Product, err
 
 	query.Close()
 	return &product, nil
+}
+
+func (pr *ProductRepository) UpdateProduct(product model.Product) error {
+	query, err := pr.connection.Prepare("UPDATE product SET name = $1, price = $2 WHERE id = $3")
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	defer query.Close()
+
+	_, err = query.Exec(product.Name, product.Price, product.ID)
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	return nil
+}
+
+func (pr *ProductRepository) DeleteProduct(id int) error {
+	query, err := pr.connection.Prepare("DELETE FROM product WHERE id = $1")
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	defer query.Close()
+
+	_, err = query.Exec(id)
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	return nil
 }

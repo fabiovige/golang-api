@@ -25,4 +25,4 @@ $ docker build -t go-api-vige .
 $ docker compose up -d
 ```
 
-Font: [Como criar uma REST API completa do zero com GO | Golang tutorial - iniciante](https://www.youtube.com/watch?v=3p4mpId_ZU8&t=1875s)
+Font: [Como criar uma REST API completa do zero com GOLANG | Golang tutorial - iniciante](https://www.youtube.com/watch?v=3p4mpId_ZU8&t=1875s)
